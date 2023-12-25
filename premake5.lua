@@ -1,5 +1,7 @@
 project "GLFW"
     kind "StaticLib"
+    staticruntime "on"
+
     language "C"
 
     targetdir (cwd .. "/bin/" .. outputdir .. "/%{prj.name}")
@@ -30,9 +32,8 @@ project "GLFW"
     }
 
     filter "system:windows"
-        buildoptions { "/MT" }
+        --buildoptions { "/MT" } TODO remove if works
         systemversion "latest"
-        staticruntime "On"
 
         files
         {
@@ -57,8 +58,8 @@ project "GLFW"
 
     filter "configurations:Debug"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
 
     filter "configurations:Release"
         runtime "Release"
-        optimize "On"
+        optimize "on"
