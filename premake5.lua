@@ -32,7 +32,6 @@ project "GLFW"
     }
 
     filter "system:windows"
-        --buildoptions { "/MT" } TODO remove if works
         systemversion "latest"
 
         files
@@ -63,3 +62,4 @@ project "GLFW"
     filter "configurations:Release"
         runtime "Release"
         optimize "on"
+
